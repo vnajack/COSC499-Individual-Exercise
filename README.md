@@ -4,7 +4,7 @@
 
 This individual Git exercise is a small programming assignment to ensure I am familiar with how to use Git by cloning the repository locally, creating and working on branches, and pushing my work appropriately.
 
-A video is included as a short demo to show:
+A [video](https://1drv.ms/v/s!AlO7D5ntW4NmkcJJWHisKMukBTMiQw?e=alptPq) is included as a short demo to show:
 * my Github account with the repository
 * the program running
 * how to make a simple change locally and push to origin

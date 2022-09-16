@@ -15,7 +15,7 @@ class Wine(object):
         self.id = Wine.class_counter
         self.name = name
         self.score = score
-        Wine.class_counter += 1
+        Wine.class_counter += 1 # auto-incrementing class counter for ID
 
     def __repr__(self):
         return '{}\t{}\t{}'.format(self.id, self.score, self.name)
