@@ -2,11 +2,11 @@
 
 from operator import attrgetter
 
-# Given 5 wine names and scores, create a Wine object and sort by name and by score
+# Given 5 wine names and scores, create a Wine object list, and then sort by name and by score
 wine_names = ["Chardonnay", "Viognier", "Gewurtztraminer", "Pinot Gris", "Riesling"]
 wine_scores = [76, 86, 94, 92, 88]
 
-# TODO: create a wine object with attributes ID, name, score
+# Wine object with attributes ID, name, score
 class Wine(object):
 
     class_counter = 0
@@ -20,13 +20,14 @@ class Wine(object):
     def __repr__(self):
         return '{}\t{}\t{}'.format(self.id, self.score, self.name)
 
+# function to create a list of Wine objects from the given names and scores
 def make_wine_list(names, scores):
     my_wines = []
     for i in range(5):
         my_wines.append(Wine(names[i], scores[i]))
     return my_wines
 
-# TODO: create a function to print a wine list
+# function to print a wine list
 def print_wine_list(list_name, wine_list):
     print("\n========= "+list_name+" =========")
     print('ID\tScore\tName')
@@ -73,15 +74,16 @@ def ask_to_sort_again():
         else: print("I'm sorry, I don't understand.")
 
 if __name__ == '__main__':
+    # Introduce as mini simulation
     print("Congratulations! You now own a winery.")
 
+    # Create Wine (object) list from given wine names and scores
     my_wines = make_wine_list(wine_names, wine_scores)
     list_name = "MY WINES"
 
+    # Continue simulation and present wine list
     print("All five of your wines have already been tasted and scored by wine critics.")
-    
     print_wine_list(list_name, my_wines)
-
     print("Now, let's sort your wine!")
 
     # ask the user how they want to sort their wine, then sort it accordingly
