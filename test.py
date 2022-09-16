@@ -17,7 +17,7 @@ class TestWine(unittest.TestCase):
 
     # Test if the Wine object's attribute name is a str
     def test_obj_attr2(self):
-        self.assertIsInstance(self.test_instance.name, str)
+        self.assertIsInstance(self.test_instance.name, str, "Wine name attribute should be a string")
 
     # Test if the Wine object's attribute score is an int
     def test_obj_attr3(self):
