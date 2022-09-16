@@ -34,18 +34,62 @@ def print_wine_list(list_name, wine_list):
         print(wine)
     print()
 
-# TODO: create a function to ask the user how they want to sort their wine list
+# function to sort the wine list by name
+def sort_by_name(wine_list):
+    return sorted(wine_list, key=attrgetter("name"))
+
+# function to sort the wine list by score
+def sort_by_score(wine_list):
+    return sorted(wine_list, key=attrgetter("score"), reverse=True)
+
+# function to ask the user how they want to sort their wine list
+def ask_to_sort(list_name, wine_list):
+    ans1 = "name"
+    ans2 = "score"
+    question = "How would you like to sort your wine list? By "+ans1+" or by "+ans2+"? "
+    
+    while True:
+        user_ans = input(question).lower()
+
+        if (ans1 in user_ans) and (ans2 in user_ans):
+            print("I'm sorry, I don't understand.")
+        elif (ans1 in user_ans):
+            return "SORTED BY NAME", sort_by_name(wine_list)
+        elif (ans2 in user_ans):
+            return "SORTED BY SCORE", sort_by_score(wine_list)
+        elif ("none" in user_ans) or ("neither" in user_ans):
+            print("Ok, no sorting this time.")
+            return list_name, wine_list
+        else:
+            print("I'm sorry, I don't understand.")
+
+def ask_to_sort_again():
+    while True:
+        answer = input("Do you want to sort your wine again? (Y/N) ").lower()
+        if answer == 'y':
+            return True
+        elif answer == 'n':
+            return False
+        else: print("I'm sorry, I don't understand.")
 
 if __name__ == '__main__':
     print("Congratulations! You now own a winery.")
 
     my_wines = make_wine_list(wine_names, wine_scores)
+    list_name = "MY WINES"
 
     print("All five of your wines have already been tasted and scored by wine critics.")
     
-    # TODO: present the wine list
-    print_wine_list("MY WINES", my_wines)
+    print_wine_list(list_name, my_wines)
 
-    # TODO: ask the user how they want to sort their wine
+    print("Now, let's sort your wine!")
 
-    # TODO: sort the wine or exit the program
+    # ask the user how they want to sort their wine, then sort it accordingly
+    while True:
+        list_name, my_wines = ask_to_sort(list_name, my_wines)
+        print_wine_list(list_name, my_wines)
+
+        if(ask_to_sort_again() is False):
+            break
+
+    print("That's the end of the program.\nThank you. Goodbye.")
