@@ -13,7 +13,7 @@ class TestWine(unittest.TestCase):
 
     # Test if the Wine object's attribute ID is an int
     def test_obj_attr1(self):
-        self.assertIsInstance(self.test_instance.id, int)
+        self.assertIsInstance(self.test_instance.id, int, "Wine ID attribute should be an integer")
 
     # Test if the Wine object's attribute name is a str
     def test_obj_attr2(self):
@@ -21,11 +21,11 @@ class TestWine(unittest.TestCase):
 
     # Test if the Wine object's attribute score is an int
     def test_obj_attr3(self):
-        self.assertIsInstance(self.test_instance.score, int)
+        self.assertIsInstance(self.test_instance.score, int, "Wine score attribute should be an integer")
 
     # Test if the wine list length is 5
     def test_list_length(self):
-        self.assertEqual(len(self.test_list), 5)
+        self.assertEqual(len(self.test_list), 5, "Wine object list length should be 5")
 
     # Test if the sort by name (asc) is correct
     def test_sort_by_name(self):
