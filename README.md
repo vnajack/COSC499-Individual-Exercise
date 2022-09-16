@@ -20,3 +20,5 @@ This application was created with the following language and module versions:
 - Python 3.10.7
 
 ## Features
+
+This application presents itself as a mini simulation where the user starts by becoming the owner of a winery. With a list of 5 wine names and wine scores, the program creates a list of Wine objects (with attributes ID, name, and score). This list can be printed neatly and read easily with the list name on top.
