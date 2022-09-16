@@ -22,3 +22,5 @@ This application was created with the following language and module versions:
 ## Features
 
 This application presents itself as a mini simulation where the user starts by becoming the owner of a winery. With a list of 5 wine names and wine scores, the program creates a list of Wine objects (with attributes ID, name, and score). This list can be printed neatly and read easily with the list name on top.
+
+The user is asked how they would like to sort the list: by name (ascending) or by score (descending). Based on the user's response, the program will either sort the list and change the name of the list accordingly, leave the list as is, or ask the user again because it didn't understand the input. After sorting the list, the user is prompted to sort again until the user indicates they do not want to sort the list anymore.
